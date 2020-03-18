@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#FF212121</color>
+    <color name="colorTextDark">#DDFFFFFF</color>
+    <color name="colorTextDarkCanvas">#ff9412</color>
+    <color name="red_light">#46e10000</color>
+    <color name="green_light">#4600ff00</color>
+    <color name="red_dark">#20e10000</color>
+    <color name="green_dark">#2000ff00</color>
+
+    <color name="redC">#ff0000</color>
+    <color name="orangeCS">#FF7F00</color>
+    <color name="yellowD">#FFFF00</color>
+    <color name="greenDS">#7FFF00</color>
+    <color name="greenE">#00FF00</color>
+    <color name="greenF">#00FF7F</color>
+    <color name="cyanFS">#00FFFF</color>
+    <color name="blueG">#007FFF</color>
+    <color name="blueGS">#0000FF</color>
+    <color name="purpleA">#7F00FF</color>
+    <color name="pinkAS">#FF00FF</color>
+    <color name="pinkB">#FF007F</color>
+    <color name="blackN">#999999</color>
+</resources>
