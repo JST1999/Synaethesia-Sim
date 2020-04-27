@@ -18,10 +18,10 @@ import be.tarsos.dsp.pitch.PitchProcessor.PitchEstimationAlgorithm;
 
 public class ListenerFragment extends Fragment {
 
-    private static final int SAMPLE_RATE = 44100;
+    private static final int SAMPLE_RATE = 102000;//88200;//44100;
     private static final int BUFFER_SIZE = 1024 * 4;
     private static final int OVERLAP = 768 * 4;
-    private static final int MIN_ITEMS_COUNT = 15;
+    private static final int MIN_ITEMS_COUNT = 6;
     static boolean IS_RECORDING;
     private static List<PitchDifference> pitchDifferences = new ArrayList<>();
     private static TaskCallbacks taskCallbacks;
