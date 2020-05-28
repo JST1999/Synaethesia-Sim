@@ -16,11 +16,6 @@
         android:theme="@style/AppTheme"
         app:popupTheme="@style/AppTheme" />
 
-    <com.jaredrummler.materialspinner.MaterialSpinner
-        android:id="@+id/tuning"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <com.github.cythara.TunerView
         android:id="@+id/pitch"
         android:layout_width="wrap_content"

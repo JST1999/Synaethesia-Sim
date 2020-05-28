@@ -102,32 +102,6 @@ public class MainActivity extends AppCompatActivity implements TaskCallbacks,
 
                 break;
             }
-            case R.id.set_notation: {
-                final SharedPreferences preferences = getSharedPreferences(PREFS_FILE,
-                        MODE_PRIVATE);
-                final boolean useScientificNotation =
-                        preferences.getBoolean(USE_SCIENTIFIC_NOTATION, true);
-
-                int checkedItem = useScientificNotation ? 0 : 1;
-
-                Builder builder = new Builder(new ContextThemeWrapper(this,
-                        R.style.AppTheme));
-                builder.setTitle(R.string.choose_notation);
-                builder.setSingleChoiceItems(R.array.notations, checkedItem,
-                        (dialog, which) -> {
-                            SharedPreferences.Editor editor = preferences.edit();
-                            editor.putBoolean(USE_SCIENTIFIC_NOTATION, which == 0);
-                            editor.apply();
-
-                            dialog.dismiss();
-
-                            TunerView tunerView = findViewById(R.id.pitch);
-                            tunerView.invalidate();
-                        });
-                builder.show();
-
-                break;
-            }
             case R.id.toggle_dark_mode: {
                 final SharedPreferences preferences = getSharedPreferences(PREFS_FILE,
                         MODE_PRIVATE);
@@ -250,21 +224,6 @@ public class MainActivity extends AppCompatActivity implements TaskCallbacks,
         tuningPosition = preferences.getInt(CURRENT_TUNING, 0);
 
         int textColorDark = getResources().getColor(R.color.colorTextDark);
-
-        MaterialSpinner spinner = findViewById(R.id.tuning);
-        MaterialSpinnerAdapter<String> adapter = new MaterialSpinnerAdapter<>(this,
-                Arrays.asList(getResources().getStringArray(R.array.tunings)));
-
-        if (isDarkModeEnabled) {
-            spinner.setTextColor(textColorDark);
-            spinner.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-            spinner.setTextColor(textColorDark);
-            spinner.setArrowColor(textColorDark);
-        }
-
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-        spinner.setSelectedIndex(tuningPosition);
     }
 
     private void enableTheme() {
