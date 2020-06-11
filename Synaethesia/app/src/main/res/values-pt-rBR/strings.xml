@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cythara</string>
+    <string name="app_name">Synaethesia Sim</string>
 
     <string name="privacy_policy">Exibir políticas de privacidade</string>
     <string name="set_notation">Definir notação</string>
@@ -12,6 +12,7 @@
         A permissão do microfone é necessária. App será fechado.
     </string>
     <string name="ok">OK</string>
+    <string name="show_github_repository">GitHub</string>
 
     <string-array name="tunings">
         <item>Cromático</item>

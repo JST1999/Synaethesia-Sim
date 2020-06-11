@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager.LayoutParams;
@@ -15,11 +14,8 @@ import android.view.WindowManager.LayoutParams;
 import com.github.cythara.ListenerFragment.TaskCallbacks;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.jaredrummler.materialspinner.MaterialSpinner.OnItemSelectedListener;
-import com.jaredrummler.materialspinner.MaterialSpinnerAdapter;
 import com.shawnlin.numberpicker.NumberPicker;
 import com.shawnlin.numberpicker.NumberPicker.OnValueChangeListener;
-
-import java.util.Arrays;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -95,9 +91,9 @@ public class MainActivity extends AppCompatActivity implements TaskCallbacks,
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.show_privacy_policy: {
+            case R.id.show_github: {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse(getString(R.string.privacy_policy_link)));
+                        Uri.parse(getString(R.string.github_link)));
                 startActivity(browserIntent);
 
                 break;

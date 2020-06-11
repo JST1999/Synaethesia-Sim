@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cythara</string>
+    <string name="app_name">Synaethesia Sim</string>
     <string name="privacy_policy">Erakutsi pribatutasun politika</string>
     <string name="set_notation">Ezarri notazioa</string>
     <string name="toggle_dark_mode">(Des)aktibatu modu iluna</string>
@@ -9,4 +9,5 @@
     <string name="choose_a_frequency">Maiztasun bat hautatu:</string>
     <string name="microphone_permission_required">Mikrofonoaren baimena beharrezkoa da</string>
     <string name="ok">Ados</string>
+    <string name="show_github_repository">GitHub</string>
 </resources>

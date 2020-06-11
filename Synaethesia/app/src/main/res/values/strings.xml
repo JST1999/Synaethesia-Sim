@@ -2,8 +2,8 @@
     <string name="app_name">Synaethesia Sim</string>
 
     <string name="privacy_policy">Show privacy policy</string>
-    <string name="privacy_policy_link" translatable="false">
-        https://gstraube.github.io/privacy_policy.html
+    <string name="github_link" translatable="false">
+        https://github.com/JST1999/Synaethesia-Sim
     </string>
 
     <string name="set_notation">Set notation</string>
@@ -14,6 +14,7 @@
     <string name="permission_required">Permission required</string>
     <string name="microphone_permission_required">Microphone permission is required. App will close.</string>
     <string name="ok">OK</string>
+    <string name="show_github_repository">Show GitHub repository</string>
 
     <string-array name="tunings">
         <item>Chromatic</item>
