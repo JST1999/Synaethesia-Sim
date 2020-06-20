@@ -1,5 +1,7 @@
 package com.github.synaethesia;
 
+import android.util.Log;
+
 import java.util.Arrays;
 
 class PitchComparator {
@@ -13,14 +15,17 @@ class PitchComparator {
         double minCentDifference = Float.POSITIVE_INFINITY;
         Note closest = notes[0];
         for (Note note : notes) {
-            double centDifference = 1200d * log2(pitch / note.getFrequency());
+            double centDifference = 1200d * log2(pitch / note.getFrequency());//pitch is the true frequency, use this!  //find where this came from
 
             if (Math.abs(centDifference) < Math.abs(minCentDifference)) {
                 minCentDifference = centDifference;
+
+                note.setMicFrequency(pitch);
                 closest = note;
             }
         }
 
+        //Log.d("Frequency: ", String.valueOf(pitch));
         return new PitchDifference(closest, minCentDifference);
     }
 

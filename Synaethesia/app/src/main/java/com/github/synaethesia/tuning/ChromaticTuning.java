@@ -163,6 +163,7 @@ public class ChromaticTuning implements Tuning {
         private final int octave;
         private final float frequency;
         private NoteName name;
+        private float micFrequency;//the frequency that was gotten from the microphone
 
         Pitch(NoteName name, int octave, String sign, float frequency) {
             this.name = name;
@@ -194,6 +195,14 @@ public class ChromaticTuning implements Tuning {
         @Override
         public String getSign() {
             return sign;
+        }
+
+        public float getMicFrequency() {
+            return micFrequency;
+        }
+
+        public void setMicFrequency(float pitch){
+            micFrequency = pitch;
         }
     }
 }

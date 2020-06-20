@@ -9,4 +9,8 @@ public interface Note {
     String getSign();
 
     float getFrequency();
+
+    float getMicFrequency();
+
+    void setMicFrequency(float pitch);
 }

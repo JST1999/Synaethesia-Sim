@@ -1,7 +1,5 @@
 package com.github.synaethesia;
 
-import com.github.synaethesia.tuning.GuitarTuning;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;

@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
+import android.util.Log;
 
 import java.util.Objects;
 
@@ -331,6 +332,9 @@ class CanvasPainter {
 
         String noteText = getNote(note.getName());
         String sign = note.getSign();
+
+//        float freq = note.getMicFrequency();
+//        Log.d("Frequency: ", String.valueOf(freq));
 
         if (noteText.equals("C") && sign.equals("#")) {
             colour = colCS;

@@ -20,7 +20,7 @@ import be.tarsos.dsp.pitch.PitchProcessor.PitchEstimationAlgorithm;
 
 public class ListenerFragment extends Fragment {
 
-    private static int SAMPLE_RATE = 0;
+    private static int SAMPLE_RATE = 44100;
     private static final int BUFFER_SIZE = 1024 * 4;
     private static final int OVERLAP = 768 * 4;
     private static final int MIN_ITEMS_COUNT = 6;

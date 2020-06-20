@@ -1,7 +1,5 @@
 package com.github.synaethesia;
 
-import com.github.synaethesia.tuning.GuitarTuning;
-
 import org.junit.Assert;
 import org.junit.Test;
 
