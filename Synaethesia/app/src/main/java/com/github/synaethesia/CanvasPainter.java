@@ -153,8 +153,17 @@ class CanvasPainter {
         String noteText = getNote(note.getName());
         String sign = note.getSign();
 
-//        float freq = note.getMicFrequency();
-//        Log.d("Frequency: ", String.valueOf(freq));
+        float freq = note.getMicFrequency();
+        double logarithm = Math.log(freq) / Math.log(2);
+        int integer = (int)logarithm;
+        double real = logarithm - integer;
+
+        double hue = (real - 0.03)*360;
+        int brightness = integer*7;
+        int saturation = 128 - brightness;
+        if (saturation > 99) saturation = 100;
+
+        //Log.d("HSV test 1: ", "Freq:"+freq+" Log:"+logarithm+" Int:"+integer+" Float:"+real+" Hue:"+hue+" Brightness:"+brightness+" Saturation:"+saturation);
 
         if (noteText.equals("C") && sign.equals("#")) {
             colour = colCS;
