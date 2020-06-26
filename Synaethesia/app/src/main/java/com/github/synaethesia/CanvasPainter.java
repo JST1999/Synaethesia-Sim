@@ -159,9 +159,12 @@ class CanvasPainter {
         double real = logarithm - integer;//only whats after the decimal point
 
         double hue = (real - 0.03)*360;
-        int brightness = integer*7;
-        int saturation = 128 - brightness;
+        float brightness = integer*10;
+        float saturation = 128 - (brightness/2);
         if (saturation > 99) saturation = 100;
+
+        brightness /= 100;//turns it to a decimal value, range = 0 to 1
+        saturation /= 100;
 
         //Log.d("HSV test 1: ", "Freq:"+freq+" Log:"+logarithm+" Int:"+integer+" Float:"+real+" Hue:"+hue+" Brightness:"+brightness+" Saturation:"+saturation);
 
