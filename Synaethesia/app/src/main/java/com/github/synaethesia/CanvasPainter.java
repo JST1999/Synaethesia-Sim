@@ -53,6 +53,10 @@ class CanvasPainter {
     private boolean useScientificNotation;
     private int referencePitch;
 
+    private int width;
+    private int height;
+    private Paint paint;
+
     private CanvasPainter(Context context) {
         this.context = context;
     }
@@ -92,6 +96,10 @@ class CanvasPainter {
         colAS = R.color.pinkAS;
         colB = R.color.pinkB;
         colN = R.color.blackN;
+
+        width = canvas.getWidth();
+        height = canvas.getHeight();
+        paint = new Paint();
 
         textColor = Color.BLACK;
         if (MainActivity.isDarkModeEnabled()) {
@@ -148,10 +156,10 @@ class CanvasPainter {
     }
 
     private void setBackground(Note note) {
-        //int colour = 0;
+        int colour = 0;
 
-        //String noteText = getNote(note.getName());
-        //String sign = note.getSign();
+        String noteText = getNote(note.getName());
+        String sign = note.getSign();
 
         float freq = note.getMicFrequency();
         double logarithm = Math.log(freq) / Math.log(2);//log is base ten so this makes it base 2. logs tell you the indices so log2(4) = 2 cause 2^2 is 4
@@ -168,36 +176,40 @@ class CanvasPainter {
 
         //Log.d("HSV test 1: ", "Freq:"+freq+" Log:"+logarithm+" Int:"+integer+" Float:"+real+" Hue:"+hue+" Brightness:"+brightness+" Saturation:"+saturation);
 
-//        if (noteText.equals("C") && sign.equals("#")) {
-////            colour = colCS;
-////        } else if (noteText.equals("C")) {
-////            colour = colC;
-////        } else if (noteText.equals("D") && sign.equals("#")) {
-////            colour = colDS;
-////        } else if (noteText.equals("D")) {
-////            colour = colD;
-////        } else if (noteText.equals("E")) {
-////            colour = colE;
-////        } else if (noteText.equals("F") && sign.equals("#")) {
-////            colour = colFS;
-////        } else if (noteText.equals("F")) {
-////            colour = colF;
-////        } else if (noteText.equals("G") && sign.equals("#")) {
-////            colour = colGS;
-////        } else if (noteText.equals("G")) {
-////            colour = colG;
-////        } else if (noteText.equals("A") && sign.equals("#")) {
-////            colour = colAS;
-////        } else if (noteText.equals("A")) {
-////            colour = colA;
-////        } else if (noteText.equals("B")) {
-////            colour = colB;
-////        } else{
-////            colour = colN;
-////        }
-////        canvas.drawColor(context.getResources().getColor(colour));
+        if (noteText.equals("C") && sign.equals("#")) {
+            colour = colCS;
+        } else if (noteText.equals("C")) {
+            colour = colC;
+        } else if (noteText.equals("D") && sign.equals("#")) {
+            colour = colDS;
+        } else if (noteText.equals("D")) {
+            colour = colD;
+        } else if (noteText.equals("E")) {
+            colour = colE;
+        } else if (noteText.equals("F") && sign.equals("#")) {
+            colour = colFS;
+        } else if (noteText.equals("F")) {
+            colour = colF;
+        } else if (noteText.equals("G") && sign.equals("#")) {
+            colour = colGS;
+        } else if (noteText.equals("G")) {
+            colour = colG;
+        } else if (noteText.equals("A") && sign.equals("#")) {
+            colour = colAS;
+        } else if (noteText.equals("A")) {
+            colour = colA;
+        } else if (noteText.equals("B")) {
+            colour = colB;
+        } else{
+            colour = colN;
+        }
+        //canvas.drawColor(context.getResources().getColor(colour));
 
         canvas.drawColor(Color.HSVToColor( new float[]{(float) hue, saturation, brightness } ));
+
+
+        paint.setColor(context.getResources().getColor(colour));
+        canvas.drawRect(0, height - height * 0.25f, width, height, paint);
     }
 
     private int getNearestDeviation() {
